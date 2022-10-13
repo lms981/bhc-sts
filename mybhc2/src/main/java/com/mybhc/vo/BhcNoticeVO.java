@@ -3,6 +3,25 @@ package com.mybhc.vo;
 public class BhcNoticeVO {
 	String nid,ntitle,ncontent,ndate,rno;
 	int nhits;
+	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	
+	
+	//°Ë»ö 
+	private String type;
+	private String keyword;
+	
 	public String getNid() {
 		return nid;
 	}

@@ -1,6 +1,7 @@
 package com.spring.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.mybhc.vo.BhcNoticeVO;
 
@@ -13,4 +14,5 @@ public interface NoticeService {
 	void getUpdateHits(String nid);     //공지사항 조회수 업데이트
 	int getUpdate(BhcNoticeVO vo);		//공지사항 수정 처리
 	int getDelete(String nid);		//공지사항 삭제 처리 
+	List<BhcNoticeVO> getSearchList(BhcNoticeVO vo) throws Exception;
 }

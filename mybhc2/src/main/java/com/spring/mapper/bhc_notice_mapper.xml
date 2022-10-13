@@ -45,5 +45,16 @@
 		delete from bhc_notice where nid=#{nid}
 	</delete>
 	
+	<select id="selectSearchList" parameterType="com.mybhc.vo.BhcNoticeVO" resultType="com.mybhc.vo.BhcNoticeVO">
+		select * from bhc_notice where delete_yn='N'
+		<choose>
+			<when test="type != null and type.equals('title')">
+			AND ntitle LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+			<when test="type != null and type.equals('content')">
+			AND ncontent LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+		</choose>
+	</select>
 	
 </mapper>

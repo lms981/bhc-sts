@@ -1,6 +1,7 @@
 package com.spring.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,5 +66,10 @@ public class NoticeServiceImpl implements NoticeService{
 		  }
 		 
 
+		  @Override
+		  public List<BhcNoticeVO> getSearchList(BhcNoticeVO vo) throws Exception{
+			  return noticeDao.selectSearchList(vo);
+		  }
+		 
 }
 

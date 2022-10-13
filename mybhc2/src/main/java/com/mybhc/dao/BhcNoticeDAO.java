@@ -91,6 +91,13 @@ public class BhcNoticeDAO{
 		  }
 	
 
+	  /*
+	   * selectList : 게시글 검색 기능 
+	   */
+	  public List<BhcNoticeVO> selectSearchList(BhcNoticeVO vo) throws Exception{
+		  return sqlSession.selectList(namespace +".selectSearchList",vo);
+		  
+	  }
 
 
 

@@ -1,12 +1,16 @@
 package com.spring.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mybhc.vo.BhcNoticeVO;
@@ -156,5 +160,17 @@ public class AdminBoardController {
 			return mv;
 			
 		}
+		
+		//@GetMapping("/getSearchList")
+		@ResponseBody
+		private List<BhcNoticeVO> getSearchList(@RequestParam("type") String type, @RequestParam("keyword") String keyword, Model model) throws Exception{
+			BhcNoticeVO vo = new BhcNoticeVO();
+			vo.setType(type);
+			vo.setKeyword(keyword);
+			return noticeService.getSearchList(vo);
+			
+		}
+		
+		
 		
 }
