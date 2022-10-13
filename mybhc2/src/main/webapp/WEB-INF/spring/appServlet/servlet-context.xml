@@ -24,8 +24,20 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- serive 객체 생성 -->
+	<beans:bean id="noticeService"  class="com.spring.service.NoticeServiceImpl"></beans:bean>
+	<beans:bean id="pageService"  class="com.spring.service.PageServiceImpl"></beans:bean>
+	<beans:bean id="boardService"  class="com.spring.service.BoardServiceImpl"></beans:bean>
+	<beans:bean id="fileService"  class="com.spring.service.FileServiceImpl"></beans:bean>
+	
+	<!-- dao 객체 생성 -->
+	<beans:bean id="noticeDao"  class="com.mybhc.dao.BhcNoticeDAO"></beans:bean>
+	<beans:bean id="boardDao"  class="com.mybhc.dao.BhcBoardDAO"></beans:bean>
+	
+	
 	<context:component-scan base-package="com.spring.mybhc" />
 	<context:component-scan base-package="com.spring.controller" />
+
 	
 	
 	

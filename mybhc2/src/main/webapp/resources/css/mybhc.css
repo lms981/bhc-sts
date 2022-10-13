@@ -85,12 +85,12 @@ div.main2 {
 /********************************************************
 // content section3
 ********************************************************/
- div.content section:nth-child(3) {
+div.content section:nth-child(3) {
 	
 	width: 550px;
 	height : 400px;
 	padding-left: 20px;
-} 
+}
 
 @charset "utf-8";
 
@@ -212,4 +212,273 @@ ul{
  		padding:5px 0; margin:0;
  		font-size:12px; 		
  	}
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+  	/***********************************
+ 		°Ô½ÃÆÇ
+ 	***********************************/
+ 	table.board, form[name='boardWriteForm'], 
+ 	table.boardContent, form[name='boardUpdateForm'],
+ 	form[name='boardDeleteForm'] {
+ 		width:70%; margin:0 auto; 	
+ 		font-size:13px;	
+ 	}
+ 	table.board , table.board th, table.board td,
+ 	table.boardContent, table.boardContent th, 
+ 	table.boardContent td {
+ 	
+ 		border-collapse:collapse;
+ 	}
+ 	table.board th, table.boardContent th {
+ 		background-color:blue;
+ 		opacity: 0.6;
+ 		color:silver;
+ 	}
+ 	table.board th, table.board td,
+ 	table.boardContent th, table.boardContent td {
+ 		padding:10px 0;
+ 	}
+ 	table.board td, table.boardContent { text-align:center; }
+ 	table.board tr:first-child td { 
+ 		border:1px solid #fff;
+ 		border-bottom:1px solid #ccc;
+ 		text-align:right; 
+ 	}
+ 	table.board tr:first-child td button{ 
+ 		border:1px solid blue;
+ 		background-color:#ccc;
+ 		border-color:#ccc;
+ 		border-radius:5px; 		
+ 	}
+ 	table.board tr:last-child td, 
+ 	table.boardContent tr:last-child td { 
+ 		border:1px solid #fff;
+ 		border-top:1px solid #ccc;
+ 		padding-top:20px;
+ 	}
+ 	table.board  td a { 
+ 		text-decoration:none;
+ 		color:#000;
+ 	}
+ 	table.board  td a:hover { 
+ 		text-decoration:underline;
+ 	}
+ 	
+ 	
+ 	form[name='boardWriteForm'] ul,
+ 	form[name='boardUpdateForm'] ul,
+ 	form[name='boardDeleteForm'] ul {
+ 		border:1px solid #e5e5e5; 
+ 		list-style-type:none;
+ 		margin:0; padding:20px;
+ 	}
+ 	form[name='boardWriteForm'] ul li,
+ 	form[name='boardUpdateForm'] ul li,
+ 	form[name='boardDeleteForm'] ul li { 
+ 		clear:left;
+ 		padding:5px 0px; 
+ 	}
+ 	form[name='boardWriteForm'] ul label,
+ 	form[name='boardUpdateForm'] ul label {
+ 		background-color:powderblue;
+ 		display:block;
+ 		float:left;
+ 		width:120px;
+ 		padding:8px 0px;
+ 		font-size:12px; color:#000;
+ 		text-indent:25px;
+ 		margin-right:10px;
+ 		margin-left:50px;
+		font-weight:bold;
+		border: 1px solid powderblue;
+		border-radius:5px;
+ 	} 
+ 	form[name='boardWriteForm'] input,
+ 	form[name='boardUpdateForm'] input {
+ 		border:1px solid #ccc;
+		border-radius:5px;
+		width:56%;
+		padding:8px 10px;
+		font-size:12px;
+ 	}
+ 	form[name='boardWriteForm'] textarea,
+ 	form[name='boardUpdateForm'] textarea {
+ 		border:1px solid #ccc;
+		border-radius:5px;
+		width:56%;
+		padding:8px 10px;
+		height:100px;
+ 	}
+ 	form[name='boardWriteForm'] li:last-child,
+ 	form[name='boardUpdateForm'] li:last-child,
+ 	form[name='boardDeleteForm'] li:last-child {
+ 		text-align:center;
+ 		padding-top:20px;
+ 	}
+ 	table.boardContent tr:nth-child(2) td,
+ 	table.boardContent tr:nth-child(3) td {
+ 		border:1px solid blue;
+ 		text-align:left;
+ 		text-indent:10px;
+ 	}
+ 	form[name='boardDeleteForm'] li:first-child { 	
+ 		text-align:center;
+ 	}
+ 	form[name='boardDeleteForm'] li:first-child img{
+ 		width:50%;
+ 	}
+ 	form[name='boardDeleteForm'] li:nth-child(2) div {
+ 		text-align:center;
+ 		font-size:20px; 
+ 		font-family:'ÇÔÃÊ·Õ¹ÙÅÁ';
+ 		font-weight:bold;
+ 		padding:10px 0;
+ 	}
+ 	 
+ 	
+ 	/******** ¹öÆ° °øÅë ½ºÅ¸ÀÏ  ******************/
+	.btn_style {
+		font-size:12px;
+		width:100px;
+		padding:7px 8px;
+		background-color:coral;
+		color:#fff;
+		border:1px solid coral;
+		margin-right:5px;
+	}
+	
+	div.content > h1 {
+ 		/* border:1px solid blue; */
+    font-size: 40px;
+    color: #4a2f16;
+    text-align: center;
+    font-family: ³ª´®°íµñ,NanumGothic,Nanum Gothic,ng,sans-serif;
+ 	}
+
+
+div.content > p {
+ 		/* border:1px solid blue; */
+    font-size: 14px;
+    color: #4a2f16;
+    text-align: center;
+    font-family: ³ª´®°íµñ,NanumGothic,Nanum Gothic,ng,sans-serif;
+ 	}
+ 	
+ 	
+/* faq */
+
+.faq_cont {
+   border-top: 2px solid #222;
+   border-bottom: 1px solid #222;
+}
+.faq_cont ul li button {
+   position: relative;
+   background: none;
+   width: 100%;
+   border: none;
+   text-align: left;
+   padding: 15px 40px 15px 50px;
+   color: #666;
+   border-bottom: 1px solid #e6e6e6;
+   cursor: pointer;
+}
+.faq_cont ul li button:before {
+   content: "Q";
+   position: absolute;
+   top: 15px;
+   left: 18px;
+   font-size: 18px;
+   font-weight: bold;
+}
+.faq_cont ul li button:after {
+   content: ">";
+   position: absolute;
+   top: 15px;
+   right: 18px;
+   font-size: 12px;
+   display: block;
+   width: 15px;
+   height: 15px;
+   border: 1px solid #5d4129;
+   line-height: 16px;
+   color: #fff;
+   background: #5d4129;
+   text-indent: 4px;
+   font-family: cursive;
+   transform: rotate(90deg);
+   font-weight: bold;
+   border-radius: 4px;
+}
+.faq_cont ul li.on button:after {
+   background: #fff;
+   color: #5d4129;
+   transform: rotate(270deg);
+}
+.faq_cont ul li.on button {
+   font-weight: bold;
+   color: #222;
+}
+.faq_cont ul li:last-child div {
+   border-bottom: none;
+}
+.faq_cont ul li div {
+   display: none;
+   position: relative;
+   padding: 22px 30px 30px 50px;
+   background: #f5f5f5;
+   border-bottom: 1px solid #e6e6e6;
+   color: #666;
+   line-height: 2;
+}
+.faq_cont ul li div:before {
+   content: "A";
+   position: absolute;
+   top: 19px;
+   left: 18px;
+   font-size: 18px;
+   color: #f43032;
+   font-weight: bold;
+}
+
+.faq_wrap >h2{
+    font-weight: 800;
+    font-size: 50px;
+    color: #4a2f16;
+    text-align: center;
+    letter-spacing: -1px;
+
+}
+.faq_wrap >p {
+	font-height:100;
+    color: #666;
+    font-size: 13px;
+    text-align: center;
+ 	
+}
+
+.blind{
+	position:absolute;
+overflow:hidden;
+width:0px;height:0px;
+font-size:0;
+line-height:0;
+text-indent:-9999px;
+}
+
+/* faq */
+.faq_wrap .tab {
+   text-align: center;
+}
+.faq_wrap .tab li {
+   display: inline-block;
+   float: none;
+}
+
+
+
+
  	
