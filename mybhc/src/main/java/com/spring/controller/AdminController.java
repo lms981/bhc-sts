@@ -88,7 +88,7 @@ public class AdminController {
 	@RequestMapping(value="/admin_add_list.do", method=RequestMethod.GET)
 	public String admin_add_list() {
 		
-		return "/admin/admin_add/admin_add_list";
+		return "/admin/admin_add/admin_add_list"; 
 	}
 	
 	
