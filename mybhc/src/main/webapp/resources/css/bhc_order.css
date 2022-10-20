@@ -1,0 +1,195 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+* {margin: 0 auto; padding: 0; font-family: 'Verdana', "맑은 고딕","MalgunGothic",  'Noto Sans CJK JP Bold', 'Noto Sans CJK JP Medium', 'Noto Sans CJK JP Regular',"나눔고딕", "나눔고딕코딩", "serif"; letter-spacing: -1px;}
+
+ul,li { padding: 0; margin: 0; display: inline-block;}
+a {text-decoration: none;}
+p {padding:0; margin: 0;}
+a {border: none}
+#online_wrap {width:1150px; height: 680px; margin: 0 auto; }
+
+header {height:60px; background-color: #ece1cb;}
+.head_tit {font-size: 22px; color: #913504; font-weight: bold; padding:15px 0 0 20px; display: inline-block;}
+
+#right_wrap {width: 292px; margin-left: 20px;  float: right; margin-top: 20px;}
+#left_wrap {margin-left: 20px; margin-top: 20px; width: 818px; }
+
+
+/*공지사항*/
+.notice_wrap {width:100%;}
+.notice_tit {font-size: 22px;  display: block; margin-top: 30px; font-weight: bold;}
+.m_notice_tit {font-size: 22px;  display: block;  font-weight: bold;}
+.notice_tel {font-size: 30px; color: #333;}
+.notice_text {font-size: 12px; margin:4px 0;}
+
+/*왼쪽 컨텐츠 - 매장검색*/
+.tab_menu { margin: 0; padding: 0; height: 60px; width: 818px;  border-bottom: 2px solid #d8d8d8; } 
+.tab_menu_off { border: 1px solid #d8d8d8;  width: 180px; height: 39px; background-color: #fff;  color: #333333; font-size: 15px; text-align: center; font-weight: bold; padding-top: 20px; float: left; }
+.tab_menu_on { border: 1px solid #333333;  width: 180px; height: 39px; background-color: #333333;  color: #fff; font-size: 15px; text-align: center; font-weight: bold; padding-top: 20px; float: left; }
+
+#search_wrap {width:100%; display: block;}
+.input_search { width: 690px; height: 60px;  border: 2px solid #333333; margin-top: 30px; padding-left: 10px; font-size: 15px; } 
+.search_btn {background-image: url("../img/btn_search.jpg"); width: 90px; height: 64px; border: none; vertical-align: middle; margin-left: 10px; margin-bottom: 2px;}
+.tex_store {font-size: 17px; color: #333333; text-align: center; margin: 20px 0;}
+
+#store_list {width:100%; display: block;}
+.choice {width: 65px;  background-color: #4a2f16; color: #fff; font-size: 17px; font-weight: bold; display: block; vertical-align: middle; padding: 10px; text-align: center;   margin-left: 15px; float: left;}
+.store_tit {font-size: 17px; font-weight: bold; display: block; text-align: left; padding-top: 20px;}
+.store_txt {font-size: 15px; color: #6f6f6f; display: block; margin-bottom: 20px;}
+.store_yn {font-size: 15px; color: black; display: block; margin-bottom: 5px; font-weight: bold;}
+
+.pin {display: inline-block; padding-top: 5px;}
+.store_cancell {width: 65px;  background-color: #ababab; color: #fff; font-size: 17px; font-weight: bold; display: block; vertical-align: middle; padding: 10px; text-align: center;   margin-left: 15px; float: left;}
+
+#container_wrap {width:1100px; margin:0 auto;}
+.btn_layout {width:100%; display: block; float:right; margin:20px 0; }
+.btn_store {width:210px; height:60px; border: 1px solid #333333; background-color: #fff; text-align: center; color: #333; font-size: 15px; font-weight: bold; float: right; }
+
+.result_tit {font-size: 19px; color: #333; text-align: left; display: block; font-weight: bold; margin-bottom: 20px; }
+.result_table {width:100%; display: block; }
+
+.result_txt {font-size:17px; font-weight: bold;  color: #f66800; display: block; margin-top: 20px;}
+.result_stxt {font-size: 15px; color: #6f6f6f; display: block; margin-bottom: 20px;}
+.menu_btn_layout {wdith:100%; display: block;}
+.btn_menu {width:210px; height: 60px; text-align: center;  display:inline-block;  border: none; background-color: #333333; font-weight: bold; margin-top: 20px; color: #fff; margin: 0 auto;}
+
+#banner_layout {width:232px; height: 220px; border: 10px solid #e1e1e1; padding:20px}
+#banner_layout li {line-height: 22px}
+.orange_tit {font-size: 16px; color: #f66800; font-weight: bold; display: block;}
+.ban_txt {font-size:13px; display: block; }
+
+.btn_order {width: 140px; height: 40px; background-color: #4a2f16; font-size: 15px; color: #fff; border: none; font-weight: bold; }
+
+.m_btn_order {width: 140px; height: 40px; background-color: #4a2f16; font-size: 15px; color: #fff; border: none; font-weight: bold; margin-right: 10px; float: right; display: inline-block;}
+
+
+/*배달*/
+
+.delivery_radio {width:28px; height: 28px; border: 1px solid #c7c7c7; background-color: #fff; margin: 20px 0 ; vertical-align: middle;}
+.del_txt {font-size:17px; color: #333333; display: block; margin-bottom:10px;}
+.del_btn_possi {width:120px; height: 40px; background-color: #f66800; font-weight: bold; color: #fff; border: none; font-size: 15px; float: right;}
+.detail_add {width:798px; height:60px; font-size: 15px; color: #333; padding-left: 10px; border: 1px solid #b5b5b5;}
+
+
+.oder_time_btn {width:210px; height: 60px; background-color: #f66800; color: #fff; font-size: 15px; font-weight: bold; border: none}
+.package_btn {width:210px; height: 60px; background-color: #ababab; color: #fff; font-size: 15px; font-weight: bold; border: none}
+
+
+/*e- coupon*/
+
+.e_td {padding:25px 20px 25px 20px; font-weight: bold;}
+.e_coupon_input {width:628px; height:40px; font-size: 15px; color: #333; padding-left: 10px;}
+.agree_layout {width: 100%; display: block;}
+.agree_tit {font-weight: bold; display: block; margin-bottom: 20px;}
+.agree_scroll01 { width:95%; height:120px; border:1px solid #dedede; display:block; font-size: 13px; float: left; overflow-y: hidden; padding: 20px;}
+
+
+/* 모바일 - 매장찾기*/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+            appearance: none;
+}
+input:checked[type="checkbox"]
+
+Input[type=”text”] {
+	-webkit-border-radius:0; /* 모서리 스타일 제거 */ 
+	-webkit-appearance:none; /* 인풋내 그림자 제거 */ 
+
+}
+
+#m_head { height:40px; background-color: #ece1cb; }
+#m_wrap {width:95%; margin: 0 auto; padding-top: 80px }
+#m_container { display: block; margin: 0 auto;}
+
+.m_head_tit {font-size: 22px; vertical-align: middle; font-weight: bold; color: #913504; padding: 18px 0 10px 10px; background-color: #ece1cb; width:100%; position:fixed; top:0; z-index: 999;}
+#m_tab_menu { width: 100%;  padding: 0; height: 40px;  margin: 20px 0; } 
+#m_tab_menu ul,li {width:100%; float: left;}
+.m_tab_menu_off { width: 43.3%; padding: 4% 3%; border: 1px solid #d8d8d8; background-color: #fff;  color: #333333; font-size: 16px; text-align: center; font-weight: bold; display: inline-block; }
+.m_tab_menu_on { width: 43.3%; padding: 4% 3%;  background-color: #333333;  color: #fff; font-size: 16px; text-align: center; font-weight: bold; border: 1px solid #4a2f16; display: inline-block; } 
+
+.m_sotre_input {border: 2px solid #333333; padding: 3%; width: 71%; vertical-align:middle; font-size: 15px;}
+.m_img_search {border: 2px solid #333333; padding: 3% 9%; background-image: url("../img/img_search.png"); background-repeat: no-repeat;  background-position:center center; background-color:#f66800; vertical-align:middle; float: right;}
+.m_txt {font-size:13px; text-align:center; display:block; margin:10px 0;}
+.m_choice { background-color: #4a2f16; color: #fff; font-size: 12px; font-weight: bold; display: block; vertical-align: middle; padding: 10px 20px; text-align: center;   margin-left: 15px; float: left;}
+.m_store_cancell {background-color: #ababab; color: #fff; font-size: 13px; font-weight: bold; display: block; vertical-align: middle; padding: 10px 15px; text-align: center;   margin-left: 15px; float: left; }
+.m_store_tit {font-size: 15px; font-weight: bold; display: block; text-align: left; padding-top: 10px; margin-top: 10px}
+.m_store_txt {font-size: 15px; color: #6f6f6f; display: block; margin-bottom: 20px ; padding-right:15px;}
+
+.m_ban {display:block; margin:20px 0; text-align:center; width: 100%; }
+
+#m_ban_layout {border: 10px solid #e1e1e1; padding:20px; display: block; }
+#m_notice_layout, .m_notice_layout {border: 10px solid #e1e1e1; padding:10px; display: block; }
+
+
+#m_btn_layout {width:100%; display: block; margin: 10px 0;}
+.m_btn_find {font-size: 15px; width:40%; height: 40px; float: right; font-weight: bold; background-color: #fff; color:#333333; border: 1px solid #333; margin-bottom: 20px;}
+.m_btn_confirm {font-size: 15px; width:40%; height: 40px; text-align: center; background-color: #333; color: #fff; border: none; margin: 10px auto;}
+.m_orange_txt {font-size:16px; font-weight:bold; color:#f66800;}
+
+
+.m_detail_add {width: 96.5%;  height:40px; font-size: 14px; color: #333; padding-left: 10px; border: 1px solid #b5b5b5; display: block; float: left; margin-bottom: 20px;}
+.m_del_txt {font-size:15px; color: #333333; display: block; margin-bottom:10px; margin-top: 20px;}
+.m_store_choice {width: 50%;  background-color: #4a2f16; color: #fff; font-size: 13px; font-weight: bold; display: block; vertical-align: middle; padding: 10px; text-align: center;   margin-left: 15px; float: left;}
+
+.m_btn_menu {width:49%; height: 50px; text-align: center;  display:inline-block; border: none; background-color: #333333; font-weight: bold; color: #fff; font-size: 15px;}
+
+.m_e_input {width: 95%;  height:40px; font-size: 14px; color: #333; padding-left: 10px; border: 1px solid #b5b5b5; display: block; float: left; margin-bottom: 20px; margin-top: 5px; -webkit-border-radius:0; }
+
+.m_e_input_txt {font-weight:bold;}
+
+.m_agree_layout {width: 100%;   display: block; margin-top: 30px;}
+.m_agree_tit {font-weight: bold; display: block; margin-bottom: 10px;}
+.m_agree_scroll01 {width:92%;  height:50px; border:1px solid #dedede; display:block; font-size: 13px; float: left; padding: 5px 10px; -webkit-overflow-scrolling: touch; overflow: auto; margin-bottom: 20px;}
+.m_menu_btn_layout {wdith:100%; display: block;}
+
+.m_oder_time_btn {width:210px; height: 40px; background-color: #f66800; color: #fff; font-size: 15px; font-weight: bold; border: none}
+.m_package_btn {width:210px; height: 40px; background-color: #ababab; color: #fff; font-size: 15px; font-weight: bold; border: none}
+
+
+#m_type {width:100%; text-align: center;  padding-top:40px; display: block;}
+.m_type_txt {font-size: 20px; font-weight: bold; display: block; margin-top: 10px;}
+
+#m_btn_layout {width: 100%; margin: 0 auto; display: block; margin-top: 10px; margin-bottom: 50px;}
+#m_btn_layout span { display: block;}
+.btn_deliy { width: 99.9%; height: 70px; background-color: #f66800; text-align: left; color: #fff; border: none; margin-top: 10px; margin-bottom: 10px; font-size: 17px; font-weight: bold; padding-left: 20px; background-image: url("../img/img_deliy_02.png"); background-position: 95%  15px; background-repeat: no-repeat;} 
+.btn_package { width: 99.9%; height: 70px; background-color: #b2b2b2; text-align:left; color: #fff; border: 1px solid #d1d1d1; font-size: 17px; font-weight: bold; padding-left: 20px; background-image: url("../img/img_package.png"); background-position: 95%  15px; background-repeat: no-repeat;}
+
+
+.store_stit {display: block; font-size: 17px; color: #f66800; font-weight: bold; margin-top: 40px;}
+
+#captchaBox { max-width: 560px; }
+#captchaBox ul { overflow:hidden; }
+#captchaBox ul li:first-child { width:170px; text-align:center; }
+#captchaBox ul li.btnBox { width:100px; }
+#captchaBox ul li.answerBox { width:270px; }
+#captchaBox input.btn { width:100px; margin-bottom:5px; }
+#captchaBox input.txt { width:145px; height:26px; font-size: 15px; }
+#captchaBox .answerBox { padding:0px 10px; }
+#captchaBox .answerBox input.btn { margin-left:5px; height:30px; }
+
+
+/* IE10 이상을 위한 css */
+input.e_coupon_bk::placeholder {
+    opacity: 1; /* 파이어폭스에서 뿌옇게 나오는 현상을 방지하기 위한 css */
+    font-weight: bold;
+}
+input.e_coupon_bk::-webkit-input-placeholder {
+    font-weight: bold;
+}
+/* IE */
+input.e_coupon_bk:-ms-input-placeholder {
+    font-weight: bold;
+}
+/* Firefox */
+input.e_coupon_bk:-moz-placeholder {
+    font-weight: bold;
+}
+
+.font_red { color: red }
+.font_black { color: black }
+
