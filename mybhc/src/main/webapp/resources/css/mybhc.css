@@ -303,7 +303,7 @@
 .gnb{overflow:hidden;padding:80px 0 5px;margin-left:180px; list-style:none;}
 .gnb li{float:left;text-align:center;width:127px;line-height:1;border-left:3px solid #bdb4a3;}
 .gnb li:first-child{border-left:0 none;}
-.gnb li a{font-weight:bold;font-size:18px;color:#813504;text-transform:uppercase;letter-spacing:-1px;}
+.gnb li a{font-weight:bold;font-size:18px;color:#813504;text-transform:uppercase;letter-spacing:-1px; text-decoration-line:none;}
 .gnb li a:hover,
 .gnb li a:focus{color:#d69e37;}
 
@@ -446,6 +446,13 @@ div.info_view {
 	border:1px solid red;
 	height: 278px;
 }
+
+
+
+
+
+
+
 
 .main_sns_warp {border:1px solid red; position:relative;width:450px;height:125px;padding:25px 35px 25px 146px;margin-top:10px;overflow:hidden;background:#ebd09e;box-sizing: border-box;}
 .main_sns_warp .tit {color: #b5975f;font-size: 20px;font-weight: bold;position: absolute;top: 50px;left: 55px;}

@@ -60,6 +60,44 @@
 <script src="http://localhost:9000/mybhc/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/mybhc/resources/js/mybhc_index.js"></script>
 <body>
+<div class="main_banner">
+				<!-- s:팝업-->
+			
+				
+				<!--
+				<article id="pop_main4" class="pop_main" style="width:450px;left:0px;margin-left:0px;margin-top:-50px">
+					 <a href="https://doit5.com/hvm/event/bhc/A11/index.html"><img src="/images/popup/popup_20220908.png" style="width:100%;" alt="가을맞이 뿌찌의 캐치캐치" /></a>
+					<p class="pop_main_foot">
+						<label>
+							<input type="checkbox" class="checkbox todayChk" />
+							<span>오늘하루 그만보기</span>
+						</label>
+						<a href="#" class="pop_close">닫기</a>
+					</p>
+					<a href="#" class="pop_main_close pop_close">팝업닫기</a>
+				</article>
+				-->
+                <article id="pop_main" class="pop_main" style="width:450px;left:0px;margin-left:0px;margin-top:-50px;">
+                    <img src="http://localhost:9000/mybhc/resources/images/bhc_popup_20220831.jpg" style="width:100%;" alt="비어존 신메뉴" />
+                    <p class="pop_main_foot">
+                    <input type="button" value="창닫기" onClick="window.close()">
+                    </p>
+                </article>
+                
+                
+                
+                
+
+                <article id="pop_main" class="pop_main" style="width:450px;left:0px;margin-left:0px;margin-top:-50px">
+					<img src="http://localhost:9000/mybhc/resources/images/popup_20220818.jpg" style="width:100%;" alt="bhc 단팥 & 크림치즈 트위스트" />
+					<p class="pop_main_foot">
+						<input type="button" value="창닫기" onClick="window.close()">
+					</p>
+				</article>
+
+</div>
+
+
 	<!-- Header Include -->
 	<iframe src="header.do" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
 	<!-- Content --------->

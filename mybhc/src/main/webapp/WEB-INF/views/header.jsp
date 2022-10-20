@@ -28,6 +28,7 @@
 			<ul class="gnb">
 				<li><a href="http://localhost:9000/mybhc/menu_info.do" target="_parent" >메뉴소개</a></li>
 				<li><a href="http://localhost:9000/mybhc/shop.do" target="_parent" >매장소개</a></li>
+				<li><a href="http://localhost:9000/mybhc/order.do" target="_parent" >주문하기</a></li>
 				<li>창업정보</li>
 				<li>BHC소식</li>
 				<li>BHC소개</li>

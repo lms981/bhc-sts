@@ -30,7 +30,7 @@ public class BhcAdminMenuDAO {
 	 * select : mapper.admin.
 	 */
 	public ArrayList<BhcAdminMenuVO> select(int startCount, int endCount) {
-		Map<String,Integer> param = new HashMap<String,Integer>();
+		Map<String,Integer> param = new HashMap<String,Integer>();	
 		param.put("start", startCount);
 		param.put("end", endCount);
 		
