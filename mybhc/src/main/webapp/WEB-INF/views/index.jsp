@@ -77,6 +77,7 @@
 					<a href="#" class="pop_main_close pop_close">팝업닫기</a>
 				</article>
 				-->
+              <!-- 
                 <article id="pop_main" class="pop_main" style="width:450px;left:0px;margin-left:0px;margin-top:-50px;">
                     <img src="http://localhost:9000/mybhc/resources/images/bhc_popup_20220831.jpg" style="width:100%;" alt="비어존 신메뉴" />
                     <p class="pop_main_foot">
@@ -94,6 +95,7 @@
 						<input type="button" value="창닫기" onClick="window.close()">
 					</p>
 				</article>
+               -->
 
 </div>
 

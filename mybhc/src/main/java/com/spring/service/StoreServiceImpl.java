@@ -15,6 +15,11 @@ public class StoreServiceImpl implements StoreService{
 	@Autowired
 	private BhcStoreDAO storeDao;
 	
+	/*@Override
+	public List<BhcStoreVO> getSearchList(String keyword){
+		
+		return storeDao.selectSearchList(keyword);
+	} */
 	@Override
 	public List<BhcStoreVO> getSearchList(String keyword){
 		
@@ -22,9 +27,9 @@ public class StoreServiceImpl implements StoreService{
 	}
 	
 	//@Override
-	public ArrayList<BhcStoreVO> getSearchStoreList(){
+/*	public ArrayList<BhcStoreVO> getSearchStoreList(){
 		return storeDao.searchStoreList();
-	}
+	} */
 	
 	@Override
 	public BhcStoreVO getMap(String sid) {

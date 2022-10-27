@@ -65,6 +65,8 @@ public class AdminBoardController {
 			 mv.addObject("vo",vo);
 			 mv.setViewName("/admin/admin_board/admin_notice_content");
 			 
+			System.out.println(vo); 
+			
 			return mv;
 		}
 		
@@ -205,7 +207,6 @@ public class AdminBoardController {
 		} 
 	 */
 		
-		//@GetMapping("/getSearchList")
 		@ResponseBody
 		@RequestMapping(value="/admin_notice_list_search.do" , method = RequestMethod.GET , produces="text/plain;charset=UTF-8")
 		private String getSearchList(String type , String keyword) { 

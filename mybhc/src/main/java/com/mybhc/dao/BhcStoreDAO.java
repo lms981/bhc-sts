@@ -1,9 +1,11 @@
 package com.mybhc.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 //import java.util.HashMap;
 import java.util.List;
 //import java.util.Map;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +21,17 @@ public class BhcStoreDAO {
 	
 	
 	public List<BhcStoreVO> selectSearchList(String keyword){
-		return sqlSession.selectList(namespace +".searchstore");
+		 Map<String,String> param = new HashMap<String,String>();
+		 param.put("keyword", keyword);
+		return sqlSession.selectList(namespace +".searchstore",param);
 		
 		
 	}
+/*	public List<BhcStoreVO> selectSearchList(String keyword){
+		return sqlSession.selectList(namespace +".searchstore");
+		
+		
+	}*/
 	
 	public ArrayList<BhcStoreVO> searchStoreList(){
 		/*

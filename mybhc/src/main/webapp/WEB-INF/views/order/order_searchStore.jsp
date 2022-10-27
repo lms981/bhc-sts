@@ -50,7 +50,8 @@
 						output += " <span class='_storeChoiceTxt choice _pointer'>선택</span>"
 						output += "<span class='store_tit _storeName'>"+  obj.sname  +"</span>"
 						output += "<span class='store_txt _storeAddr'>"+  obj.sadress +"</span></td><td>"
-						output += "<a href='/mybhc/order_map.do?sid="+obj.sid+"'target='_blank'><img src='http://localhost:9000/mybhc/resources/images/img_pin.jpg'></span></a>"
+						//output += "<a href='/mybhc/order_map.do?sid="+obj.sid+"'target='_blank'><img src='http://localhost:9000/mybhc/resources/images/img_pin.jpg'></span></a>"
+						output += "<a href='/mybhc/order_map.do?sid="+obj.sid+"'target='_blank' onClick='wondow.open(this.href,'','width=520, height=415'); return false; '><img src='http://localhost:9000/mybhc/resources/images/img_pin.jpg'></span></a>"
 						output += "</td></tr>"
 				}
 						output += "</tbody>";

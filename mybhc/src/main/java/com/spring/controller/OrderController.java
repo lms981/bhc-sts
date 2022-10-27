@@ -51,7 +51,7 @@ public class OrderController {
 		return "/order/order_searchAddress";
 	}
 	
-	
+	/*
 	@RequestMapping(value="/order_searchStore.do" , method=RequestMethod.GET)
 	public ModelAndView admin_notice_list(String rpage) {
 		ModelAndView mv = new ModelAndView();
@@ -67,6 +67,16 @@ public class OrderController {
 		mv.setViewName("/order/order_searchStore");
 		return mv;
 	}
+	 */
+	@RequestMapping(value="/order_searchStore.do" , method=RequestMethod.GET)
+	public String admin_notice_list() {
+		
+		return "/order/order_searchStore";
+	}
+	
+	
+	
+	
 	
 	
 	@ResponseBody
@@ -102,10 +112,10 @@ public class OrderController {
 	private ModelAndView getSearchMap(String sid) {
 		ModelAndView mv = new ModelAndView();
 		 BhcStoreVO vo = storeService.getMap(sid);
-		 
 		 mv.addObject("vo",vo);
 		 mv.setViewName("/order/order_map");
 		 
+		 System.out.println(vo);
 		return mv;
 	}
 	
