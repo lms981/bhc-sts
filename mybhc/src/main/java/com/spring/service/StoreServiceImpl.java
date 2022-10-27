@@ -27,9 +27,9 @@ public class StoreServiceImpl implements StoreService{
 	}
 	
 	//@Override
-/*	public ArrayList<BhcStoreVO> getSearchStoreList(){
-		return storeDao.searchStoreList();
-	} */
+	public ArrayList<BhcStoreVO> getSearchStoreList(int startCount,int endCount){
+		return storeDao.searchStoreList(startCount, endCount);
+	} 
 	
 	@Override
 	public BhcStoreVO getMap(String sid) {

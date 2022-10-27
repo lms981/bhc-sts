@@ -20,10 +20,10 @@
 			
 		</select>
      
-    <!-- <select id="searchstorelist" parameterType="map" resultType="com.mybhc.vo.BhcStoreVO">
+    <select id="searchstorelist" parameterType="map" resultType="com.mybhc.vo.BhcStoreVO">
     	select rno,sid,sname,sadress,latitude,longitude
         from(select rownum rno,sid,sname,sadress,latitude,longitude from bhc_store)
-    </select> -->
+    </select> 
     
     <select id="searchmap"  parameterType="java.lang.String" resultType="com.mybhc.vo.BhcStoreVO">
     	select sid,latitude,longitude from bhc_store where sid = #{sid}

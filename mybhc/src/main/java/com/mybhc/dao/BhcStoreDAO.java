@@ -33,11 +33,12 @@ public class BhcStoreDAO {
 		
 	}*/
 	
-	public ArrayList<BhcStoreVO> searchStoreList(){
-		/*
-		 * Map<String,Integer> param = new HashMap<String,Integer>(); param.put("start",
-		 * startCount); param.put("end", endCount);
-		 */
+	public ArrayList<BhcStoreVO> searchStoreList(int startCount , int endCount){
+		
+		  Map<String,Integer> param = new HashMap<String,Integer>(); 
+		  param.put("start",startCount); 
+		  param.put("end", endCount);
+		 
 		
 		List<BhcStoreVO> list = sqlSession.selectList(namespace + ".searchstorelist");
 		

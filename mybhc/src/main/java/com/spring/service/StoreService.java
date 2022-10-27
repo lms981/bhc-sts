@@ -7,7 +7,7 @@ import com.mybhc.vo.BhcStoreVO;
 
 public interface StoreService {
 	List<BhcStoreVO> getSearchList(String keyword);
-	//ArrayList<BhcStoreVO> getSearchStoreList();
+	ArrayList<BhcStoreVO> getSearchStoreList(int startCount,int endCount);
 	BhcStoreVO getMap(String sid);
 	
 }

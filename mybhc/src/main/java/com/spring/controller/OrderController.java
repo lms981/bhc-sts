@@ -67,14 +67,13 @@ public class OrderController {
 		mv.setViewName("/order/order_searchStore");
 		return mv;
 	}
+	 
 	 */
 	@RequestMapping(value="/order_searchStore.do" , method=RequestMethod.GET)
 	public String admin_notice_list() {
 		
 		return "/order/order_searchStore";
 	}
-	
-	
 	
 	
 	
