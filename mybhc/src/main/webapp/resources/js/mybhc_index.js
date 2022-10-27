@@ -9,11 +9,13 @@ $(document).ready(function(){
    function  initNoticeList(rpage){
         //Ajax를 이용한 데이터가져오기
         $.ajax({
-           url : "notice_list_json.do?rpage="+rpage ,
+           url : "admin_notice_list.do?rpage="+rpage ,
            success : function(result){
             //1. 콜백함수의 결과인 result 값은 문자열 JSON 객체로 변환
             let notice = JSON.parse(result);
             
+            alert(result);
+        
             
             //2. Dynamic HTML을 이용하여 JSON 결과를 출력하는 코드 생성
             let output = "<div class='notice_style'><h3>공지사항</h3>";
@@ -23,8 +25,9 @@ $(document).ready(function(){
             output += "<ul class='notice_list'>";
             for(data of notice.list){
 	            output += "<li>";
-	            output += "<span>"+ data.rno +"</span>";
+	            output += "<span>"+ data.rid +"</span>";
 	            output += "<span>"+ data.ntitle +"</span>";
+	            output += "<span>"+ data.ncontent +"</span>";
 	            output += "<span>"+ data.ndate +"</span>";
 	            output += "<span>"+ data.nhits +"</span>";
 	            output += "</li>";
