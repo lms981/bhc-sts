@@ -209,7 +209,7 @@ public class AdminBoardController {
 		@ResponseBody
 		@RequestMapping(value="/admin_notice_list_search.do" , method = RequestMethod.GET , produces="text/plain;charset=UTF-8")
 		private String getSearchList(String type , String keyword) { 
-			
+			System.out.println("dd");
 			
 			//gson 라이브러리를 이용하여 자바 list 객체를 JSON 객체로 변환
 			JsonObject jobject = new JsonObject(); //BhcNoticeVO
@@ -228,6 +228,7 @@ public class AdminBoardController {
 				jarray.add(jo);
 			}
 			jobject.add("list" , jarray);
+			
 			
 			return gson.toJson(jobject);
 		  }

@@ -1,0 +1,382 @@
+/*
+@author https://github.com/macek/jquery-serialize-object
+*/
+$.fn.serializeObject = function() {
+
+    var result = {}
+    var extend = function(i, element) {
+        var node = result[element.name]
+        if ("undefined" !== typeof node && node !== null) {
+            if ($.isArray(node)) {
+                node.push(element.value)
+            } else {
+                result[element.name] = [node, element.value]
+            }
+        } else {
+            result[element.name] = element.value
+        }
+    }
+
+    $.each(this.serializeArray(), extend)
+    return result
+}
+
+function fnSendData()
+{
+    var sendType    = arguments[0];
+    var sendData    = arguments[1];
+    var dataType    = arguments[2];
+    var sendPath    = arguments[3];
+    var callbackFunc = arguments[4];
+    var loadingObj  = arguments[5];
+    var bLoadingObj = true;
+    if (loadingObj == undefined || loadingObj == "")
+        bLoadingObj = false;
+    if (bLoadingObj && loadingObj.css("display") == "none")
+        loadingObj.show();
+
+    $.ajax({
+        type    : sendType,
+        url     : sendPath,
+        data    : sendData,
+        datatype : dataType,
+
+        success : function (result) {
+            if (bLoadingObj)
+                loadingObj.hide();
+            if (result.statusCode != "200")
+            {
+                fnMsgDialog(result.statusMessage, result.statusCode);
+
+                if (result.statusCode == "402" || result.statusCode == "511")
+                    location.replace("/");
+                return;
+            }
+            if (callbackFunc != undefined && callbackFunc != "")
+                eval(callbackFunc + "(result);");
+        },
+        error: function (xhr, status, error) {
+            if (bLoadingObj)
+                loadingObj.hide();
+            alert("주문등록에 실패하였습니다. 잠시 후 다시 시도해주시기 바랍니다");
+
+            ga('event', 'exception', {
+                'description': error + "," + status + "," + xhr.status + ","  + xhr.statusText,
+                'fatal': false
+            });
+        },
+        complete: function () {
+            if (bLoadingObj)
+                loadingObj.hide();
+        }
+    });
+}
+
+function fnSendData2()
+{
+    var sendType    = arguments[0];
+    var sendData    = arguments[1];
+    var dataType    = arguments[2];
+    var sendPath    = arguments[3];
+    var callbackFunc = arguments[4];
+    var loadingObj  = arguments[5];
+    var bLoadingObj = true;
+    if (loadingObj == undefined || loadingObj == "")
+        bLoadingObj = false;
+    if (bLoadingObj && loadingObj.css("display") == "none")
+        loadingObj.show();
+
+    $.ajax({
+        type    : sendType,
+        url     : sendPath,
+        data    : sendData,
+        datatype : dataType,
+
+        success : function (result) {
+            if (bLoadingObj)
+                loadingObj.hide();
+            if (result.statusCode != "200")
+            {
+                alert(result.statusMessage);
+
+                if (result.statusCode == "402" || result.statusCode == "511")
+                    location.replace("/");
+                return;
+            }
+            if (callbackFunc != undefined && callbackFunc != "")
+                eval(callbackFunc + "(result);");
+        },
+        error: function (xhr, status, error) {
+            if (bLoadingObj)
+                loadingObj.hide();
+            alert("error : " + error);
+        },
+        complete: function () {
+            if (bLoadingObj)
+                loadingObj.hide();
+        }
+    });
+}
+
+function fnMsgDialog() {
+    var message = arguments[0];
+    $("#statusCd").val(arguments[1]);
+    $("div#dialog p").empty().html(message);
+    $("#dialog").dialog("open");
+}
+
+function fnPhoneFomatter(num){
+    return num.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,"$1-$2-$3");
+}
+
+function fnGeoLocation()
+{
+    var result = {statusCode : "", statusMessage : "", lat : "", lng : ""};
+
+    // Geolocation API에 액세스할 수 있는지를 확인
+    if (navigator.geolocation) {
+        //위치 정보를 얻기
+        navigator.geolocation.getCurrentPosition (function(pos) {
+            lat = pos.coords.latitude;  // 위도
+            lng = pos.coords.longitude; // 경도
+
+            result.lat              = lat;
+            result.lng              = lng;
+            result.statusCode       = "200";
+            result.statusMessage    = "성공";
+        }, function(error){
+            result.statusCode       = "500";
+            result.statusMessage    = error.message;
+            console.log("ERROR(" + error.code + "): " + error.message);
+        });
+    } else {
+        result.statusCode       = "999";
+        result.statusMessage    = "이 브라우저에서는 Geolocation이 지원되지 않습니다.";
+    }
+    return result;
+}
+
+function gisAppSuccess(latitude, longitude) {
+    var result = {statusCode : "", statusMessage : "", lat : "", lng : ""};
+
+    if ( latitude == 0.0 || longitude == 0.0 ) {
+        result.statusCode       = "999";
+        result.statusMessage    = "위치정보를 가져올 수 없습니다. 다시 시도해 주시기 바랍니다.";
+    } else {
+        result.lat              = latitude;
+        result.lng              = longitude;
+        result.statusCode       = "200";
+        result.statusMessage    = "성공";
+    }
+
+    fnAppSuccResult(result);
+}
+
+// 전화번호 유효성 체크
+function fnCheckPhoneNumber() {
+    var obj = arguments[0];
+    if (obj == undefined || obj.val().trim() == "") {
+        obj.focus();
+        return false;
+    }
+    var objVal  = obj.val();
+    if ( objVal.length > 8 ) {
+        // 유효성 체크
+        var regExp_ctn = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})(-?)([0-9]{3,4})(-?)([0-9]{4})$/;
+        if ( regExp_ctn.test(objVal) ) {
+            objVal = objVal.replace(/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?([0-9]{3,4})-?([0-9]{4})$/, "$1-$2-$3");
+        } else {
+            fnMsgDialog("유효하지 않은 전화번호 입니다.");
+            obj.val("");
+            return false;
+        }
+    } else {
+        fnMsgDialog("유효하지 않은 전화번호 입니다.");
+        obj.val("");
+        return false;
+    }
+    return;
+}
+
+function fnTxtLimit() {
+    var str		= arguments[0];
+    var maxlength	= arguments[1];
+    var len		= 0;
+    var newStr	= '';
+
+    for (var i = 0; i < str.length; i++)
+    {
+        var n	= str.charCodeAt(i);
+        var nv	= str.charAt(i);
+
+        if ( (n >= 0) && (n < 256) )
+            len ++;
+        else
+            len += 2;
+
+        if (len > maxlength) {
+            newStr = str.substr(0, i);
+            break;
+        } else {
+            newStr = str;
+        }
+    }
+    return newStr;
+}
+
+//콤마찍기
+function comma(str) {
+    str = String(str);
+    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+}
+
+//최대글자수 체크
+function maxLengthCheck(object){
+    if (object.value.length > object.maxLength){
+        object.value = object.value.slice(0, object.maxLength);
+    }
+}
+// 빈값 체크
+function isEmpty(str){
+    return (!str || (Array.isArray(str) && !str.length));
+}
+
+// 글자수 체크
+function validateMaxLength(id, size){
+    $("#"+id).keyup(function (e){
+        var content = $(this).val();
+        // $('#counter').html("("+content.length+" / 최대 200자)");    //글자수 실시간 카운팅
+
+        if (content.length > size){
+            //alert("최대 "+size+"자까지 입력 가능합니다.");
+            $(this).val(content.substring(0, size));
+            // $('#counter').html("(200 / 최대 200자)");
+        }
+    });
+}
+
+
+// DataList 생성 - 공통코드
+function gfnDatalistCreate() {
+    var id = arguments[0];
+    var datalistGroupCode = arguments[1];
+    var param = arguments[2];
+    var allSelgubun = arguments[3];
+    var value = arguments[4];
+    var callbackFunction = arguments[5];
+
+    $('.mask').css("display", "");
+
+    $.ajax({
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        type: "post",
+        url: "/common/datalist.do",
+        data: JSON.stringify({"datalistGroupCode": datalistGroupCode, "param":param}),
+        datatype: "json",
+        success: function (result) {
+            gfnSetDatalistOption(id, result, allSelgubun);
+        },
+        error: function (xhr, status, error) {
+            alert("error:" + error);
+        },
+        complete: function () {
+            $('.mask, .window').hide();
+        }
+    });
+}
+
+
+function gfnSetDatalistOption(id, result, gbn) {
+
+    var $datalist = $("datalist#"+id);
+
+    if (gbn == "ALL" ) {
+        $datalist.append("<option value=''>전체</option>");
+    } else if (gbn == "SEL") {
+        $datalist.append("<option value=''>선택</option>");
+    }
+
+    if (result != undefined && result != "") {
+        var data = result.data;
+        for (var i = 0; i < data.length; i++) {
+            $datalist.append("<option value='" + data[i].comboName + "' code='" + data[i].comboCode + "' corporationCd='" + data[i].법인코드 + "' name='" + data[i].comboName + "'>"+data[i].comboCode+"</option>");
+        }
+    }
+
+}
+
+
+//undefined 정리
+function gfnNvl( str ){
+    var nvlStr = arguments[1];
+    nvlStr =  nvlStr != undefined && nvlStr != "" ? nvlStr : "";
+
+    return str == undefined || str == "undefined" || str == null || str == "null" ? nvlStr : str.toString();
+}
+
+function gfnSetId( result, setId ) {
+    var rtn = true;
+    var noAlert = arguments[2];
+    var loadingFlag = arguments[3];
+
+
+    if(arguments[3] == undefined || arguments[3] == "")   //Loading bar Hide 여부
+    {
+        gfnHideLoader();
+    }
+    if( result.message != undefined && result.message.length > 0 ) {
+        gfnAlert( "확인", result.message );
+        rtn = false;
+    } else if(result.data == undefined || result.data.length < 1 ) {
+        if( noAlert != undefined && noAlert != "NO-ALERT" ) {
+            gfnAlert( "확인", "조회 내역이 없습니다!" );
+        }
+        rtn = false;
+    } else{
+
+        var tmp = "";
+
+        for( var i = 0; i < result.head.length; i++  ) {
+
+            tmp = gfnNvl( eval( "result.data[0]."+result.head[i] ), "-" ) + "";
+            //comma, hpno 세팅
+            if( $("#"+setId).find("#"+result.head[i]).hasClass("form-comma") )
+                tmp = gfnFormatStr( tmp,  "comma" );
+            else if( $("#"+setId).find("#"+result.head[i]).hasClass("form-hpno") )
+                tmp = gfnFormatStr( tmp,  "hpno" );
+
+            //값 세팅
+            $("#"+setId).find("span#"+result.head[i]).html(tmp.replace(/\n/g,"<br/>"));
+            $("#"+setId).find("li#"+result.head[i]).html(tmp.replace(/\n/g,"<br/>"));
+            $("#"+setId).find("img#"+result.head[i]).attr("src",tmp);
+
+            $("#"+setId).find("input#"+result.head[i]).attr("value",tmp);
+            $("#"+setId).find("input#"+result.head[i]).val(tmp);
+
+            $("#"+setId).find("textarea#"+result.head[i]).val(tmp);
+
+            if( $("#"+setId).find("#"+result.head[i]).prop("tagName") == "SELECT" ) {
+                $("#"+setId).find("select#"+result.head[i]).find("option:selected").removeAttr("selected");
+                $("#"+setId).find("select#"+result.head[i] + " option[value='"+tmp+"']").attr("selected", "selected");
+
+                $("#"+setId).find("select#"+result.head[i]).val(tmp);
+            }
+
+        }
+    }
+
+    return rtn;
+}
+
+//ajax 완료
+$(document).ajaxComplete(function(evnet, xhr, settings){
+    xhr.withCredentials = true;
+    if(xhr.status=="301"){
+        //alert("Login Session Expired");
+        location.href = "/";
+        return false;
+    }
+    //console.log(xhr.responseText);
+});

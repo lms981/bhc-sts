@@ -38,11 +38,13 @@
 	
 	 //검색기능 ajax
 	$("#btn_search").click(function (nid,ntitle,ndate,nhits){
-		 alert($("#type").val());
+		// alert($("#type").val());
 		 $.ajax({
 			type: 'GET',
 			url : "admin_notice_list_search.do?type="+$("#type").val()+"&keyword="+$("#keyword").val(),
 			success : function(result){
+				alert(result);
+				
 				let data = JSON.parse(result);
 				//alert($("#nhit"));
 				//테이블 초기화

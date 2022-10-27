@@ -46,8 +46,8 @@
                 <td class="_txtAlign_C _pb_10"><img src="http://localhost:9000/mybhc/resources/images/img_deliy.jpg"></td>
             </tr>
             <tr>
-                <td class="_txtAlign_C"><button class="btn package_btn" data-location-href="searchStore.do">포장주문</button></td>
-                <td class="_txtAlign_C"><button class="btn oder_time_btn" data-location-href="searchAddress.do">배달주문</button></td>
+                <td class="_txtAlign_C"><a href="order_searchStore.do"><button class="btn package_btn" data-location-href="searchStore.do">포장주문</button></a></td>
+                <td class="_txtAlign_C"><a href="order_searchAdress.do"><button class="btn oder_time_btn" data-location-href="searchAddress.do">배달주문</button></a></td>
             </tr>
             </tbody>
         </table>

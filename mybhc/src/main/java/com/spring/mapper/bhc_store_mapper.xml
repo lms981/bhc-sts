@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="mapper.store">
+    
+	    <select id="searchstore" parameterType="map" resultType="com.mybhc.vo.BhcStoreVO">
+			select * from bhc_store 
+				<choose>
+					<when test="keyword != null">
+						where sname LIKE '%'|| #{keyword} || '%'
+					</when>
+				</choose>
+			
+		</select>
+     
+    <select id="searchstorelist" parameterType="map" resultType="com.mybhc.vo.BhcStoreVO">
+    	select rno,sid,sname,sadress,latitude,longitude
+        from(select rownum rno,sid,sname,sadress,latitude,longitude from bhc_store)
+    </select>
+    
+    <select id="searchmap"  parameterType="java.lang.String" resultType="com.mybhc.vo.BhcNoticeVO">
+    	select sid,latitude,longitude from bhc_store where sid = #{sid}
+    
+    </select>
+    
+    
+    
+    
+    </mapper>

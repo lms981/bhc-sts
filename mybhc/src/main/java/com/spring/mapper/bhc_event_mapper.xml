@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+	<mapper namespace="mapper.event">
+
+	<select id="event_content" parameterType="String" resultType="com.mybhc.vo.BhcEventVO">
+		select * from bhc_event where eid=#{eid}			
+	</select>
+
+	<select id="event_list" resultType="com.mybhc.vo.BhcEventVO">
+		select * from bhc_event
+	</select>
+
+	<!-- member join -->
+	<insert id="event_register"  parameterType="com.mybhc.vo.BhcEventVO" >
+		insert into bhc_event	
+			 values ('e_'|| sequ_bhc_event.nextval,#{etitle},#{esdate},#{eedate},#{efile1},#{esfile1},#{efile2},#{esfile2},sysdate)
+			 
+	</insert>
+
+</mapper>

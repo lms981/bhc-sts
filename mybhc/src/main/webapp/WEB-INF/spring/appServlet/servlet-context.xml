@@ -33,18 +33,20 @@
 	<beans:bean id="pageService"  class="com.spring.service.PageServiceImpl"></beans:bean>
 	<beans:bean id="boardService"  class="com.spring.service.BoardServiceImpl"></beans:bean>
 	<beans:bean id="fileService"  class="com.spring.service.FileServiceImpl"></beans:bean>
+	<beans:bean id="storeService"  class="com.spring.service.StoreServiceImpl"></beans:bean>
 	
 	<beans:bean id="adminMenuService"  class="com.spring.service.AdminMenuServiceImpl"></beans:bean>
 	<beans:bean class="com.spring.service.MemberServiceImpl" id="memberService"/>
-	
+	<beans:bean class="com.spring.service.EventServiceImpl" id="eventService"/>
 	
 	
 	<!-- dao 객체 생성 -->
 	<beans:bean id="noticeDao"  class="com.mybhc.dao.BhcNoticeDAO"></beans:bean>
 	<beans:bean id="boardDao"  class="com.mybhc.dao.BhcBoardDAO"></beans:bean>
 	<beans:bean id="menuDao"  class="com.mybhc.dao.BhcAdminMenuDAO"></beans:bean>
+	<beans:bean id="storeDao"  class="com.mybhc.dao.BhcStoreDAO"></beans:bean>
 	<beans:bean class="com.mybhc.dao.BhcMemberDAO" id="memberDao"/>
-	
+	<beans:bean class="com.mybhc.dao.BhcEventDAO" id="eventDao"/>
 	
 	<context:component-scan base-package="com.spring.mybhc" />
 	<context:component-scan base-package="com.spring.controller" />

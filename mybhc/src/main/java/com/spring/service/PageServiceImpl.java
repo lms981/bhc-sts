@@ -11,6 +11,8 @@ public class PageServiceImpl {
 	
 	@Autowired
 	private NoticeServiceImpl noticeService;
+	@Autowired
+	private StoreServiceImpl storeService;
 	
 	
 	/**
@@ -44,6 +46,8 @@ public class PageServiceImpl {
 		if(serviceName.equals("notice")) {
 			noticeService = (NoticeServiceImpl)service;
 			dbCount = noticeService.getTotalCount();
+		}else if(serviceName.equals("store")){
+			storeService = (StoreServiceImpl)service;
 		}
 		
 		//총 페이지 수 계산

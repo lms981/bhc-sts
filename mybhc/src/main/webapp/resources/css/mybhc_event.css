@@ -1,0 +1,24 @@
+ul.event_bhc_ul {
+	/*border:1px solid red;*/
+	border:none;
+	list-style-type:none;
+}
+.event_bhc_ul > li{
+	
+	clear:both;
+	padding:10px;
+	
+}
+div.event_content {
+	border-bottom:1px solid black;	
+	margin:30px;
+	height:145px;
+}
+div.event_image {
+
+	margin-right:30px;
+	float:left
+	
+	
+}
+	
